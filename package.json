@@ -5,8 +5,9 @@
   "scripts": {
     "test": "npx playwright test",
     "test:report": "npx playwright test --reporter=html",
-    "test:headed": "npx playwright test --headed"
-
+    "test:headed": "npx playwright test --headed",
+    "test:reg-cart": "npx playwright test tests/registerapi.spec.ts tests/cart.spec.ts",
+    "test:reg-login-cart": "npx playwright test tests/registerapi.spec.ts tests/login.spec.ts tests/cart.spec.ts"
   },
   "keywords": [],
   "author": "",

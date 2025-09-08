@@ -1,0 +1,18 @@
+{
+  "valid": [
+    {
+      "email": "hasnat-dev-3@yopmail.com",
+      "password": "12345"
+    }
+  ],
+  "invalid": [
+    {
+      "email": "invalid_user@yopmail.com",
+      "password": "validPass123"
+    },
+    {
+      "email": "valid_user@yopmail.com",
+      "password": "wrongPass"
+    }
+  ]
+}

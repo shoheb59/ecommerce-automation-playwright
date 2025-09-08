@@ -10,7 +10,7 @@ async function globalTeardown() {
     for (const file of files) {
       const filePath = path.join(downloadsDir, file);
       fs.unlinkSync(filePath);
-      console.log(`🧹 Cleaned up: ${filePath}`);
+      console.log(`Cleaned up: ${filePath}`);
     }
   }
 }

@@ -1,0 +1,8 @@
+{
+  "nameOnCard": "Test User",
+  "cardNumber": "1234567890123456",
+  "cvc": "123",
+  "expiryMonth": "12",
+  "expiryYear": "2025",
+  "orderMessage": "Please deliver between 10 AM to 5 PM"
+}

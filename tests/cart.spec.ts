@@ -8,6 +8,7 @@ import { CheckoutPage } from "../pages/CheckoutPage";
 import { fileExists, fileSize } from "../utils/helper";
 
 const projectPath = process.cwd();
+const validUser = cred.valid[0]; 
 
 test("Add two products and complete checkout", async ({ page }) => {
   const home = new HomePage(page);
@@ -18,7 +19,7 @@ test("Add two products and complete checkout", async ({ page }) => {
 
   await home.open();
   await home.goToLogin();
-  await login.login(cred.email, cred.password);
+  await login.login(validUser.email, validUser.password);
 
   await home.goToProducts();
   await product.selectCategory(0, "Dress");

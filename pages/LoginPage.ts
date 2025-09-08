@@ -1,23 +1,43 @@
 import { Page, expect } from "@playwright/test";
+import { BasePage } from "./BasePage";
 
-export class LoginPage {
-  constructor(private page: Page) {}
+export class LoginPage extends BasePage {
 
-  private emailInput = '[type="email"]';
-  private passwordInput = '[type="password"]';
-  private loginButton = '[data-qa="login-button"]';
-  private logoutLink = 'a[href="/logout"]';
+ constructor(page) {
+    super(page);
+    this.page = page;
+  }
+
+  loginlocators = {
+    emailInput: '[type="email"]',
+    passwordInput: '[type="password"]',
+    loginButton: '[data-qa="login-button"]',
+    logoutLink: 'a[href="/logout"]',
+    loginTextlabel: ".login-form h2",
+    logoutButton: 'text="Logout"',
+    loginErrorMessage: "//*[text()='Your email or password is incorrect!']",
+
+  }
 
   async login(email: string, password: string) {
-    await expect(this.page.locator(".login-form h2")).toHaveText("Login to your account");
-    await this.page.fill(this.emailInput, email);
-    await this.page.fill(this.passwordInput, password);
-    await this.page.click(this.loginButton);
-    await expect(this.page.locator(this.logoutLink)).toBeVisible();
+    await expect(this.page.locator(this.loginlocators.loginTextlabel)).toHaveText("Login to your account");
+    await this.page.fill(this.loginlocators.emailInput, email);
+    await this.page.fill(this.loginlocators.passwordInput, password);
+    await this.page.click(this.loginlocators.loginButton);
+  }
+
+  async verifyLogoutbuttonVisibility() {
+     await expect(this.page.locator(this.loginlocators.logoutButton)).toBeVisible();
+
+  }
+
+  async verifyLoginErrorMessage() {
+    await expect(this.page.locator(this.loginlocators.loginErrorMessage)).toBeVisible();
+
   }
 
   async logout() {
-    await this.page.click(this.logoutLink);
+    await this.page.click(this.loginlocators.logoutLink);
     await expect(this.page).toHaveURL(/.*login/);
   }
 }
