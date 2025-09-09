@@ -44,7 +44,7 @@ export class CheckoutPage extends BasePage {
       this.page.click(this.weblocators.downloadInvoiceButton),
     ]);
 
-    const savePath = path.join(projectPath, "downloads", "invoice.pdf");
+    const savePath = path.join(projectPath, "downloads", "invoice.txt");
     fs.mkdirSync(path.dirname(savePath), { recursive: true });
     await download.saveAs(savePath);
 
