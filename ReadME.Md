@@ -60,7 +60,7 @@ This project uses GitHub Actions for CI/CD. Each push to the main branch trigger
 
 ![CI/CD Status](https://github.com/shoheb59/ecommerce-automation-playwright/actions/workflows/playwright-ci.yml/badge.svg)
 
-[View the Latest successful CI/CD run with accessible artifacts](https://github.com/shoheb59/ecommerce-automation-playwright/actions/runs/17581820300/job/49939788434)
+[View the Latest successful CI/CD run with accessible artifacts](https://github.com/shoheb59/ecommerce-automation-playwright/actions/runs/17583029024)
 
 ## Test Data
 
